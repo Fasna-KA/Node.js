@@ -1,12 +1,15 @@
 const express=require('express')
 const app=express()
 
+const add= require('./export')
+const {name}= require('./export')
 //cors - npm i cors
 // const cors = require("cors")
 
 // app.use(cors())
 
-
+app.get('/sum',add)
+app.get('/name',name,(req,res)=>{console.log('hi')})
 
 app.get('/',(req,res)=>{
     console.log('hi')
